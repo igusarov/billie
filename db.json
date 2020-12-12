@@ -1,0 +1,39 @@
+{
+  "consumers": [
+    {
+      "id": 1,
+      "name": "Martian Firma",
+      "budget": 10000.000,
+      "budget_spent": 45000.000,
+      "date_of_first_purchase": "2119-07-07"
+    },
+    {
+      "id": 2,
+      "name": "Martian Firma 12",
+      "budget": 1000.12343,
+      "budget_spent": 34000.000,
+      "date_of_first_purchase": "2119-07-07"
+    },
+    {
+      "id": 3,
+      "name": "Martian Firma 34",
+      "budget": 102300.000,
+      "budget_spent": 1300.000,
+      "date_of_first_purchase": "2119-07-07"
+    },
+    {
+      "id": 4,
+      "name": "Martian Firma 24",
+      "budget": 1002340.100,
+      "budget_spent": 453400.000,
+      "date_of_first_purchase": "2119-07-07"
+    },
+    {
+      "id": 5,
+      "name": "Martian Firma 345",
+      "budget": 1034530.754,
+      "budget_spent": 54600.340,
+      "date_of_first_purchase": "2119-07-07"
+    }
+  ]
+}
