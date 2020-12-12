@@ -2,8 +2,8 @@ export type Consumer = {
   id: number;
   name: string;
   budget: number;
-  budget_spent: string;
-  date_of_purchase: string;
+  budget_spent: number;
+  date_of_first_purchase: string;
 };
 
 export type ConsumerState = Readonly<{
