@@ -3,7 +3,7 @@ import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
 import { Container } from "@material-ui/core";
 import selectors from "./store/selectors";
-import * as consumerActions from "./store/consumer/consumer.asyncActions";
+import * as consumerActions from "./store/consumer/consumer.async-actions";
 import ConsumerList from "./components/consumer/consumer-list.component";
 import { Consumer } from "./store/consumer/consumer.types";
 import EditConsumerModal from "./components/edit-consumer-modal/edit-consumer-modal.component";

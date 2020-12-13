@@ -3,7 +3,6 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import { ConsumerState } from "./consumer/consumer.types";
 import consumerReducer from "./consumer/consumer.reducer";
-import "fontsource-roboto";
 
 export type AppState = Readonly<{
   consumer: ConsumerState;
