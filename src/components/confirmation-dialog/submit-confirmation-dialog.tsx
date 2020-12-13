@@ -9,7 +9,6 @@ import {
 import { Consumer } from "../../store/consumer/consumer.types";
 
 type Props = {
-  isShown: boolean;
   onAccept: () => void;
   onDismiss: () => void;
   consumer?: Consumer;
@@ -19,10 +18,9 @@ const SubmitConfirmationDialog: React.FC<Props> = ({
   consumer,
   onAccept,
   onDismiss,
-  isShown,
 }) => {
   return (
-    <Dialog maxWidth="xs" open={isShown} onClose={onDismiss}>
+    <Dialog maxWidth="xs" open onClose={onDismiss}>
       <DialogTitle>Submit confirmation</DialogTitle>
       <DialogContent>
         Do you want to submit new data for {consumer?.name} ?

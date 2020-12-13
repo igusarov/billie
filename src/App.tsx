@@ -17,8 +17,7 @@ enum ModalType {
 
 const App: FC = () => {
   const dispatch = useDispatch();
-  const [selectedConsumer, setSelectedConsumer] = useState<Consumer>();
-  const [customerDraft, setCustomerDraft] = useState<Consumer>();
+  const [draftConsumer, setDraftConsumer] = useState<Consumer>();
   const [openedModal, setOpenedModal] = useState(ModalType.None);
   const consumers = useSelector(selectors.consumer.getConsumers);
 
@@ -27,35 +26,45 @@ const App: FC = () => {
   }, [dispatch]);
 
   const handleClickItem = (item: Consumer) => {
-    setSelectedConsumer(item);
+    setDraftConsumer(item);
     setOpenedModal(ModalType.Edit);
   };
 
   const handleSubmit = (consumer: Consumer) => {
-    setCustomerDraft(consumer);
+    setDraftConsumer(consumer);
     setOpenedModal(ModalType.Confirm);
   };
 
   const handleSubmitAccept = () => {
-    console.log("submit accepted", customerDraft);
+    if (!draftConsumer) {
+      return;
+    }
+    const { id, budget } = draftConsumer;
+    dispatch(
+      consumerActions.updateConsumer(id, {
+        budget,
+      })
+    );
     setOpenedModal(ModalType.None);
   };
 
   return (
     <Container maxWidth="sm">
       <ConsumerList onClickItem={handleClickItem} items={consumers} />
-      <EditConsumerModal
-        onDismiss={() => setOpenedModal(ModalType.None)}
-        onSubmit={handleSubmit}
-        isShown={openedModal === ModalType.Edit}
-        consumer={selectedConsumer}
-      />
-      <SubmitConfirmationDialog
-        isShown={openedModal === ModalType.Confirm}
-        onDismiss={() => setOpenedModal(ModalType.Edit)}
-        onAccept={handleSubmitAccept}
-        consumer={selectedConsumer}
-      />
+      {openedModal === ModalType.Edit && draftConsumer && (
+        <EditConsumerModal
+          onDismiss={() => setOpenedModal(ModalType.None)}
+          onSubmit={handleSubmit}
+          consumer={draftConsumer}
+        />
+      )}
+      {openedModal === ModalType.Confirm && draftConsumer && (
+        <SubmitConfirmationDialog
+          onDismiss={() => setOpenedModal(ModalType.Edit)}
+          onAccept={handleSubmitAccept}
+          consumer={draftConsumer}
+        />
+      )}
     </Container>
   );
 };

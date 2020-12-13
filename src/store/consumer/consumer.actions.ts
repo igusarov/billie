@@ -7,7 +7,7 @@ export const getConsumersSuccess = (consumers: Consumer[]) =>
 export const getConsumersFail = (e: Error) =>
   action(ConsumerActionTypes.GET_CONSUMERS_FAIL, e);
 export const updateConsumer = (id: number) =>
-  action(ConsumerActionTypes.UPDATE_CONSUMER);
+  action(ConsumerActionTypes.UPDATE_CONSUMER, id);
 export const updateConsumerSuccess = (consumer: Consumer) =>
   action(ConsumerActionTypes.UPDATE_CONSUMER_SUCCESS, consumer);
 export const updateConsumerFail = (id: number, e: Error) =>
