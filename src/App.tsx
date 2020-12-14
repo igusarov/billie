@@ -4,9 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { Container } from "@material-ui/core";
 import selectors from "./store/selectors";
 import * as consumerActions from "./store/consumer/consumer.async-actions";
-import ConsumerList from "./components/consumer/consumer-list.component";
+import ConsumerList from "./components/consumer-list/consumer-list";
 import { Consumer } from "./store/consumer/consumer.types";
-import EditConsumerModal from "./components/edit-consumer-modal/edit-consumer-modal.component";
+import EditConsumerModal from "./components/edit-consumer-modal/edit-consumer-modal";
 import SubmitConfirmationDialog from "./components/confirmation-dialog/submit-confirmation-dialog";
 
 enum ModalType {

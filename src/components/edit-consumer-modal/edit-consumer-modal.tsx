@@ -71,26 +71,34 @@ const EditConsumerModal: React.FC<Props> = ({
 
   return (
     <Dialog open onClose={onDismiss}>
-      <DialogTitle>Edit {consumer?.name}</DialogTitle>
+      <DialogTitle data-testid="title">Edit {consumer?.name}</DialogTitle>
       <DialogContent className={classes.content}>
         <form noValidate autoComplete="off">
           <FormControl error={!!error} fullWidth>
             <InputLabel required>Budget</InputLabel>
             <Input
+              data-testid="budget-input"
               fullWidth
               value={draftBudget}
               onChange={handleBudgetChange}
               type="number"
             />
-            {!!error && <FormHelperText>{error}</FormHelperText>}
+            {!!error && (
+              <FormHelperText data-testid="error-field">{error}</FormHelperText>
+            )}
           </FormControl>
         </form>
       </DialogContent>
       <DialogActions>
-        <Button onClick={onDismiss} color="primary">
+        <Button data-testid="cancel-button" onClick={onDismiss} color="primary">
           Cancel
         </Button>
-        <Button disabled={!!error} onClick={handleSubmit} color="primary">
+        <Button
+          disabled={!!error}
+          data-testid="submit-button"
+          onClick={handleSubmit}
+          color="primary"
+        >
           Save
         </Button>
       </DialogActions>
