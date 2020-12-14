@@ -3,36 +3,36 @@
     {
       "id": 1,
       "name": "Martian Firma",
-      "budget": 1448,
-      "budget_spent": 45000,
-      "date_of_first_purchase": "2119-07-07"
+      "budget": 11000,
+      "budget_spent": 5000,
+      "date_of_first_purchase": "2119-06-07"
     },
     {
       "id": 2,
-      "name": "Martian Firma 12",
-      "budget": 1234,
-      "budget_spent": 34000,
-      "date_of_first_purchase": "2119-07-07"
+      "name": "Martian Walmart",
+      "budget": 2000.34,
+      "budget_spent": 1550,
+      "date_of_first_purchase": "2119-01-2"
     },
     {
       "id": 3,
-      "name": "Martian Firma 34",
-      "budget": 12321321,
-      "budget_spent": 1300,
-      "date_of_first_purchase": "2119-07-07"
+      "name": "Martian Amazon",
+      "budget": 3500,
+      "budget_spent": 1990.45,
+      "date_of_first_purchase": "2120-07-07"
     },
     {
       "id": 4,
-      "name": "Martian Firma 24",
-      "budget": 1002340.123,
+      "name": "Martian Apple",
+      "budget": 1100500.123,
       "budget_spent": 453400,
-      "date_of_first_purchase": "2119-07-07"
+      "date_of_first_purchase": "2121-07-12"
     },
     {
       "id": 5,
-      "name": "Martian Firma 345",
-      "budget": 234234,
-      "budget_spent": 54600.34,
+      "name": "Martian Microsoft",
+      "budget": 6200.456,
+      "budget_spent": 5400,
       "date_of_first_purchase": "2119-07-07"
     }
   ]
