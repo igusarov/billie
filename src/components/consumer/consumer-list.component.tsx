@@ -11,6 +11,7 @@ import {
 } from "@material-ui/core";
 import blue from "@material-ui/core/colors/blue";
 import { Consumer } from "../../store/consumer/consumer.types";
+import formatCurrency from "../../utils/formatCurrency";
 
 type Props = {
   items: Consumer[];
@@ -51,9 +52,11 @@ const ConsumerList: FC<Props> = ({ items, onClickItem }) => {
                 {item.name}
               </TableCell>
               <TableCell>{item.date_of_first_purchase}</TableCell>
-              <TableCell>{item.budget}</TableCell>
-              <TableCell>{item.budget_spent}</TableCell>
-              <TableCell>{item.budget - item.budget_spent}</TableCell>
+              <TableCell>{formatCurrency(item.budget)}</TableCell>
+              <TableCell>{formatCurrency(item.budget_spent)}</TableCell>
+              <TableCell>
+                {formatCurrency(item.budget - item.budget_spent)}
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
